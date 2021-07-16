@@ -72,7 +72,6 @@ router.post('/addpost',  upload.single('image'), async(req,res) => {
 //getmypost
 router.get("/mypost", async (req, res) => {
     const userId = req.query.id;
-    console.log("{}}{}{}",userId);
     const data = postModel.find({ userid: userId });
     data
       .then((data) => {
@@ -117,6 +116,8 @@ router.get("/getpost", async (req,res) => {
         res.status(500).send(e);
     }
 })
+
+
 
 module.exports = router
 
