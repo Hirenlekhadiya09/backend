@@ -8,7 +8,7 @@ require('path')
 const signup = require('./src/Routes/signup');
 const addpost = require('./src/Routes/addpost')
 
-const port = process.env.port || 5000;
+const PORT = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(bodyParser.urlencoded({extended:false}))
@@ -22,6 +22,6 @@ app.get("/", async(req,res,next) => {
     res.send("Hello Hiren")
 })
 
-app.listen(port,() => {
-    console.log(`connection done ${port}`)
+app.listen(PORT,() => {
+    console.log(`connection done ${PORT}`)
 })
