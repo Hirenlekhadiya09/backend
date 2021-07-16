@@ -146,7 +146,7 @@ router.post('/login', async (req,res) => {
         const hashpassword = await bcrypt.compare(password,emailExits.password)
         if(hashpassword)
         {
-            var token = JWT.sign({email:email,id:emailExits._id},process.env.JWT_KEY);
+            var token = JWT.sign({email:email,id:emailExits._id},"facebook");
             return res.send({
                 status:true,
                 message:"You are Login successfully!",
