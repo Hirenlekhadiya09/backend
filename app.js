@@ -18,8 +18,8 @@ app.use(bodyParser.urlencoded({extended:false}))
 app.use(bodyParser.json()) 
 app.use(express.static('images'));
 
-app.use('/api/signup',signup)
-app.use('/api/addpost',addpost)
+app.use('/api',signup)
+app.use('/api',addpost)
 
 app.get("/", async(req,res,next) => {
     res.send("Hello Hiren")
