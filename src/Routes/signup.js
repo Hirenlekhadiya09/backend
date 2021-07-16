@@ -86,7 +86,7 @@ router.post('/signup', upload.single('image'), async (req,res) => {
     }
     else{
         const salt = await bcrypt.genSalt(10);
-        var token = JWT.sign({email:email},process.env.JWT_KEY);
+        var token = JWT.sign({email:email},"facebook");
         const hashpassword = await bcrypt.hash(password,salt)
         const signupuser  = await new signupModel({
             username,
